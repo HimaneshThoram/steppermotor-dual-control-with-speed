@@ -107,25 +107,25 @@ void controlMotors() {
   // Handle motor control based on current command
   Serial.println("Controlling motors...");
   switch (currentCommand) {
-    case 'L': // Forward (clockwise)
+    case 'F': // Forward (clockwise)
       digitalWrite(dirPin1, HIGH);
       digitalWrite(dirPin2, HIGH);
       Serial.println("Motors should move forward (clockwise).");
       spinMotors();
       break;
-    case 'R': // Backward (counterclockwise)
+    case 'B': // Backward (counterclockwise)
       digitalWrite(dirPin1, LOW);
       digitalWrite(dirPin2, LOW);
       Serial.println("Motors should move backward (counterclockwise).");
       spinMotors();
       break;
-    case 'F': // Turn Left
+    case 'L': // Turn Left
       digitalWrite(dirPin1, HIGH);
       digitalWrite(dirPin2, LOW); // Motor 2 stops or spins backward
       Serial.println("Turning left.");
       spinMotors();
       break;
-    case 'B': // Turn Right
+    case 'R': // Turn Right
       digitalWrite(dirPin1, LOW); // Motor 1 stops or spins backward
       digitalWrite(dirPin2, HIGH);
       Serial.println("Turning right.");
